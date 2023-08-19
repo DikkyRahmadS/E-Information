@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
--- http://www.phpmyadmin.net
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25 Sep 2019 pada 06.58
--- Versi Server: 5.6.26
--- PHP Version: 5.6.12
+-- Waktu pembuatan: 19 Agu 2023 pada 18.42
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -26,11 +27,11 @@ SET time_zone = "+00:00";
 -- Struktur dari tabel `admin`
 --
 
-CREATE TABLE IF NOT EXISTS `admin` (
+CREATE TABLE `admin` (
   `id_admin` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `admin`
@@ -45,10 +46,10 @@ INSERT INTO `admin` (`id_admin`, `username`, `password`) VALUES
 -- Struktur dari tabel `berita`
 --
 
-CREATE TABLE IF NOT EXISTS `berita` (
+CREATE TABLE `berita` (
   `id_berita` int(11) NOT NULL,
   `data` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `berita`
@@ -67,22 +68,19 @@ INSERT INTO `berita` (`id_berita`, `data`) VALUES
 -- Struktur dari tabel `gambar`
 --
 
-CREATE TABLE IF NOT EXISTS `gambar` (
+CREATE TABLE `gambar` (
   `id_gambar` int(11) NOT NULL,
   `gambar` varchar(100) NOT NULL,
   `keterangan` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `gambar`
 --
 
 INSERT INTO `gambar` (`id_gambar`, `gambar`, `keterangan`) VALUES
-(1, 'photographer_minimalism_photo_74519_1280x7201.jpg', 'vjgjgvj'),
-(3, 'photographer_sea_sunset_123418_1280x7201.jpg', 'dua'),
-(4, 'man_silhouette_sky_night_119121_1280x720.jpg', 'dua'),
-(5, 'window_loneliness_bw_125783_1280x720.jpg', 'satu'),
-(6, '7.jpg', 'satu');
+(7, 'PKS-BRIN1-1024x683.jpg', 'Fakultas Sains dan Teknologi Jalin Perjanjian Kerja Sama (PKS) dengan Pusat Riset Fotonik Badan Riset dan Inovasi Nasional (BRIN)'),
+(8, 'WhatsApp-Image-2023-08-18-at-10_46_03-1024x768.jpg', 'Fakultas Sains dan Teknologi Jalin Perjanjian Kerja Sama (PKS) dengan Pusat Riset Fotonik Badan Riset dan Inovasi Nasional (BRIN)');
 
 -- --------------------------------------------------------
 
@@ -90,71 +88,75 @@ INSERT INTO `gambar` (`id_gambar`, `gambar`, `keterangan`) VALUES
 -- Struktur dari tabel `text`
 --
 
-CREATE TABLE IF NOT EXISTS `text` (
+CREATE TABLE `text` (
   `id_text` int(11) NOT NULL,
   `data` varchar(1000) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `text`
 --
 
 INSERT INTO `text` (`id_text`, `data`) VALUES
-(2, 'asdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdad'),
-(3, 'hn');
+(3, 'Kegiatan Persiapan Awal Perkuliahan Semester Ganjol Tahun Akademik 2023/2024 August 18, 2023');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `berita`
+-- Indeks untuk tabel `berita`
 --
 ALTER TABLE `berita`
   ADD PRIMARY KEY (`id_berita`);
 
 --
--- Indexes for table `gambar`
+-- Indeks untuk tabel `gambar`
 --
 ALTER TABLE `gambar`
   ADD KEY `id_gambar` (`id_gambar`);
 
 --
--- Indexes for table `text`
+-- Indeks untuk tabel `text`
 --
 ALTER TABLE `text`
   ADD PRIMARY KEY (`id_text`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
--- AUTO_INCREMENT for table `berita`
+-- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
--- AUTO_INCREMENT for table `gambar`
+-- AUTO_INCREMENT untuk tabel `gambar`
 --
 ALTER TABLE `gambar`
-  MODIFY `id_gambar` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id_gambar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
--- AUTO_INCREMENT for table `text`
+-- AUTO_INCREMENT untuk tabel `text`
 --
 ALTER TABLE `text`
-  MODIFY `id_text` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id_text` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
